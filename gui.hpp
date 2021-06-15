@@ -10,3 +10,4 @@ void display(void);
 void glCircle(float r,float rx,float ry);
 void draw_board();
 void draw_phase(Board board);
+void draw_legalmoves(Board board);

@@ -64,6 +64,19 @@ void draw_phase(Board board){
     }
 }
 
+//合法手の描画
+void draw_legalmoves(Board board){
+    LegalMoveList moves(board);
+    //打てるところに水色で点を打つ
+    for(int i=0;i<moves.size();++i){
+        int row=moves[i]/8,col=moves[i]%8;
+        glColor3f(0.5,0.5,1);
+        glBegin(GL_POLYGON);
+            glCircle(5,line_interval*(row+0.5)+25,line_interval*(col+0.5)+25);
+        glEnd();
+    }
+}
+
 //文字列の挿入
 void draw_string(float x,float y,std::string str){
     glRasterPos2f(x,y);

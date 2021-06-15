@@ -6,5 +6,6 @@ void display(void){
     glClear(GL_COLOR_BUFFER_BIT|GL_COLOR_BUFFER_BIT);
     draw_board();
     draw_phase(board);
+    draw_legalmoves(board);
     glutSwapBuffers();
 }
