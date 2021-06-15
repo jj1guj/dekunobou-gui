@@ -212,38 +212,3 @@ class LegalMoveList{
     int move_num;
 
 };
-
-void disp(Board board){
-    for(int i=0;i<8;++i){
-        for(int j=0;j<8;++j){
-            if(board.board[i][j]==0){
-                std::cout<<"* ";
-            }else if(board.board[i][j]==1){
-                std::cout<<"o ";
-            }else{
-                std::cout<<"x ";
-            }
-        }
-        std::cout<<std::endl;
-    }
-    std::cout<<std::endl;
-}
-
-void disp_teban(Board board){
-    LegalMoveList moves(board);
-    int moves_count=0;
-    for(int i=0;i<8;++i){
-        for(int j=0;j<8;++j){
-            //合法手だったらidを表示
-            if(moves.size()>0 && moves[moves_count]==8*i+j && moves_count<moves.size()){
-                ++moves_count;
-                if(moves_count>=10)std::cout<<moves_count;
-                else std::cout<<moves_count<<" ";
-            }else if(board.board[i][j]==0)std::cout<<"* ";
-            else if(board.board[i][j]==1)std::cout<<"o ";
-            else if(board.board[i][j]==-1)std::cout<<"x ";
-        }
-        std::cout<<std::endl;
-    }
-    std::cout<<std::endl;
-}
