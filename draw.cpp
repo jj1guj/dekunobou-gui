@@ -52,12 +52,12 @@ void draw_phase(Board board){
             if(board.board[i][j]==1){
                 glColor3f(0,0,0);
                 glBegin(GL_POLYGON);
-                    glCircle(stone_r,line_interval*i+25,line_interval*j+25);
+                    glCircle(stone_r,line_interval*(i+0.5)+25,line_interval*(j+0.5)+25);
                 glEnd();
             }else if(board.board[i][j]==-1){
                 glColor3f(1,1,1);
                 glBegin(GL_POLYGON);
-                    glCircle(stone_r,line_interval*i+25,line_interval*j+25);
+                    glCircle(stone_r,line_interval*(i+0.5)+25,line_interval*(j+0.5)+25);
                 glEnd();
             }
         }
