@@ -38,10 +38,10 @@ void draw_board(){
     glColor3f(0,0,0);
     glPointSize(5);
     glBegin(GL_POINTS);
-        glVertex2f(2*line_interval,2*line_interval);
-        glVertex2f(6*line_interval,2*line_interval);
-        glVertex2f(2*line_interval,6*line_interval);
-        glVertex2f(6*line_interval,6*line_interval);
+        glVertex2f(2*line_interval+25,2*line_interval+25);
+        glVertex2f(6*line_interval+25,2*line_interval+25);
+        glVertex2f(2*line_interval+25,6*line_interval+25);
+        glVertex2f(6*line_interval+25,6*line_interval+25);
     glEnd();
 }
 
