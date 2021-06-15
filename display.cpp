@@ -7,5 +7,8 @@ void display(void){
     draw_board();
     draw_phase(board);
     draw_legalmoves(board);
+
+    //手番の描画
+    draw_teban(board);
     glutSwapBuffers();
 }

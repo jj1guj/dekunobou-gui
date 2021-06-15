@@ -77,6 +77,22 @@ void draw_legalmoves(Board board){
     }
 }
 
+void draw_teban(Board board){
+    //手番の描画
+    glColor3f(0,0,0);
+    draw_string(505,120,"sente");
+    draw_string(505,135,"gote");
+    glColor3f(0.8,0.8,0.8);
+    glPointSize(5);
+    glBegin(GL_POINTS);
+        if(board.turn){
+            glVertex2f(500,132);
+        }else{
+            glVertex2f(500,117);
+        }
+    glEnd();
+}
+
 //文字列の挿入
 void draw_string(float x,float y,std::string str){
     glRasterPos2f(x,y);
