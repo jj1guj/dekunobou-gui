@@ -3,6 +3,8 @@
 #include<GL/glut.h>
 
 #pragma once
+extern bool clicked;
+
 //display.cpp
 void display(void);
 
