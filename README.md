@@ -5,8 +5,10 @@
 # 動作環境
 - Windows
 - UNIX (CMakeLists.txtを書き換える必要あり)
-# Required libraries
+# Required libraries and packages
 - OpenGL
+- cmake
+- make
 # build
 ```
 mkdir build && cd build
