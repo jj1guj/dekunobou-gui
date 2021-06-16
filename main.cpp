@@ -1,5 +1,10 @@
 #include "gui.hpp"
 
+bool clicked = false;
+float X[2];
+int move_X[2];
+
+Board board;
 int main(int argc,char** argv){
     glutInit(&argc,argv);
     glutInitDisplayMode(GLUT_RGB|GLUT_DEPTH|GLUT_DOUBLE);
@@ -9,5 +14,7 @@ int main(int argc,char** argv){
     glClearColor(0,0.31,0.18,1);
     gluOrtho2D(0,600,600,0);
     glutDisplayFunc(display);
+    glutPassiveMotionFunc(mouse_motion);
+    glutMouseFunc(mouse_clicked);
     glutMainLoop();
 }
