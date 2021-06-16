@@ -1,11 +1,13 @@
 #include"gui.hpp"
 
 void mouse_motion(int x, int y) {
-    X[0] = (float)(25 * (x / 25));
-    X[1] = (float)(25 * (y / 25));
-    if (X[0] < 25 || X[0]>475 || X[1] < 25 || X[1]>475) {
-        X[0] = (float)x;
-        X[1] = (float)y;
+    X[0] = x;
+    X[1] = y;
+    //カーソルが盤上にあるなら盤面のマス目の中央の座標に丸める
+    if (x >= 25 && x <= 25 + line_interval * 8 &&
+        y >= 25 && y <= 25 + line_interval * 8) {
+        X[0] = (x - 25) / line_interval * line_interval + 25;
+        X[1] = (y - 25) / line_interval * line_interval + 25;
     }
     glutPostRedisplay();
 }
@@ -13,12 +15,13 @@ void mouse_motion(int x, int y) {
 void mouse_clicked(int button, int state, int x, int y) {
     if (button != GLUT_LEFT_BUTTON || state != GLUT_DOWN)return;
     clicked = true;
-    X[0] = (float)(25 * (x / 25));
-    X[1] = (float)(25 * (y / 25));
-
-    if (X[0] < 25 || X[0]>475 || X[1] < 25 || X[1]>475) {
-        X[0] = (float)x;
-        X[1] = (float)y;
+    X[0] = x;
+    X[1] = y;
+    //カーソルが盤上にあるなら盤面のマス目の中央の座標に丸める
+    if (x >= 25 && x <= 25 + line_interval * 8 &&
+        y >= 25 && y <= 25 + line_interval * 8) {
+        X[0] = (x - 25) / line_interval * line_interval + 25;
+        X[1] = (y - 25) / line_interval * line_interval + 25;
     }
     glutPostRedisplay();
 }
