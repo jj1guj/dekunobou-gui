@@ -1,6 +1,7 @@
 #include "gui.hpp"
 
 bool clicked = false;
+bool turn_player = false;//lŠÔ‚Ìè”Ô
 float X[2];
 int move_X[2];
 

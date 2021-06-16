@@ -1,7 +1,10 @@
 #include"dekunobou.hpp"
 #include"othello.hpp"
 #include<GL/glut.h>
-extern bool clicked;
+
+extern bool turn_player;//人間の手番
+
+extern bool clicked;//マウスがクリックされたかを管理する
 
 extern int line_interval;//盤の線の間隔
 extern float stone_r;//石の半径

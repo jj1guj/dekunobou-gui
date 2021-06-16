@@ -1,4 +1,5 @@
 #include "gui.hpp"
+#include"engine.hpp"
 //描画用の関数たち
 int line_interval = 56;//盤の線の間隔
 float stone_r = line_interval / 2 - 5;//石の半径
@@ -77,9 +78,10 @@ void draw_phase(){
                     break;
                 }
             }
-            //合法手なら1手すすめる
+            //合法手なら1手すすめてソフトに1手打たせる
             if (islegal) {
                 board.push(move);
+                board.push(go(board));
             }
         }
         clicked = false;
