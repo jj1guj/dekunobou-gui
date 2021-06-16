@@ -4,6 +4,7 @@
 
 #pragma once
 extern bool clicked;
+extern float X[2];
 
 //display.cpp
 void display(void);
